@@ -1,10 +1,11 @@
-import { Command } from "commander";
-import {
-  addContact,
-  getContactById,
-  listContacts,
-  removeContact,
-} from "./contacts.js";
+const { Command } = require("commander");
+// import {
+//   addContact,
+//   getContactById,
+//   listContacts,
+//   removeContact,
+// } from "./contacts.js";
+const contactsHandler = require("./contacts");
 
 const program = new Command();
 program
@@ -21,19 +22,19 @@ const argv = program.opts();
 function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
-      listContacts();
+      contactsHandler.listContacts();
       break;
 
     case "get":
-      getContactById(id);
+      contactsHandler.getContactById(id);
       break;
 
     case "add":
-      addContact(name, email, phone);
+      contactsHandler.addContact(name, email, phone);
       break;
 
     case "remove":
-      removeContact(id);
+      contactsHandler.removeContact(id);
       break;
 
     default:
