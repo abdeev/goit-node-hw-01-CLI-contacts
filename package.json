@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index",
-    "start:dev": "npx nodemon server",
+    "start:dev": "nodemon index",
     "lint": "npx eslint src server.js",
     "lint:fix": "npx eslint --fix src server.js"
   },
